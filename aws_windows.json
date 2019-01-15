@@ -1,0 +1,25 @@
+{
+  "variables": {
+    "aws_access_key": "AKIAJJLL7DUICZIBCWBQ",
+    "aws_secret_key": "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"
+  },
+"builders": [{
+      "type": "amazon-ebs",
+      "access_key": "{{ user `aws_access_key` }}",
+      "secret_key": "{{ user `aws_secret_key` }}",
+      "region": "us-east-1",
+      "source_ami_filter": {
+          "filters": {
+          "virtualization-type": "hvm",
+          "name": "Windows_Server-2016-English-Full-Base-2018.10.14 - ami-050202fb72f001b47",
+          "root-device-type": "ebs"
+},
+          
+          "owners": ["099720109477"],        
+          "most_recent": true
+},
+          "instance_type": "t2.micro",
+          "ssh_username": "root",
+          "ami_name": "packer-demo-windows-{{timestamp}}"
+}]
+}
