@@ -1,7 +1,7 @@
 {
    "variables": {
-    "vcenter_server": "17vc01.millardref.com",
-    "username":       "pvasco@lineagelog",
+    "vcenter_server": "replaceme,
+    "username":       "replaceme",
     "password":       "REPLACEME",
     "cluster" :       "REPLACEME",
     "host" :          "REPLACEME"
