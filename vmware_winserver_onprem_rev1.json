@@ -1,0 +1,40 @@
+{
+   "variables": {
+    "vcenter_server": "17vc01.millardref.com",
+    "username":       "pvasco@lineagelog",
+    "password":       "REPLACEME",
+    "cluster" :       "REPLACEME",
+    "host" :          "REPLACEME"
+    "Network":        "REPLACEME",
+    "datastore":      "REPLACEME",
+    "iso_datastore":  "REPLACEME"
+
+    
+  },
+  "builders": [
+    {
+      "type": "vsphere-iso",
+
+      "vcenter_server": "{{ user `vcenter_server` }}",
+      "insecure_connection": "true",
+      "username": "{{ user `username` }}",
+      "password": "{{ user `password` }}",
+      "cluster": "{{ user `cluster` }}",
+      "host": "{{ user `host` }}",
+
+      "vm_name":  "win2012base",
+      "convert_to_template": "true",
+      "folder": "templates",
+      "cpu": "2",
+      "ram": "4000",
+      "network": "{{ user `Network }}",
+      "network_adapter": "e1000",
+      "guest_os_type": "Windows2012_64",
+      "datastore": "{{ user `datastore` }}",
+      "disk_size": "40GB",
+      "iso": "ISOS/CentOS7.iso",
+      "iso_datastore": "{{ user `iso_datastore` }}"
+
+    }
+  ]
+}
