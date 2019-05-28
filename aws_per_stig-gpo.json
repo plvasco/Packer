@@ -1,7 +1,7 @@
 {
   "variables": {
-    "aws_access_key": "AKIA5HLXIOZ2MWCT4Z6X",
-    "aws_secret_key": "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"
+    "aws_access_key": "AFILLIN",
+    "aws_secret_key": "AFILLIN"
   },
 "builders": [{
       "type": "amazon-ebs",
