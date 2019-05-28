@@ -1,0 +1,36 @@
+{
+  "variables": {
+    "aws_access_key": "AKIA5HLXIOZ2MWCT4Z6X",
+    "aws_secret_key": "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"
+  },
+"builders": [{
+      "type": "amazon-ebs",
+      "access_key": "{{ user `aws_access_key` }}",
+      "secret_key": "{{ user `aws_secret_key` }}",
+      "region": "us-east-1",
+      "instance_type": "t3.medium",
+      "source_ami": "ami-0a9ca0496f746e6e0",        
+      "ami_name": "Pietto-Win19rev4-STIG",
+      "user_data_file":"ec2-userdata.ps1",      
+      "communicator": "winrm",
+      "winrm_username": "Administrator",
+      "winrm_use_ssl": true,
+      "winrm_insecure": true
+           }],
+     
+ "provisioners": [
+         {  "type": "powershell", "script": "init.ps1"},
+         {  "type": "powershell", "script": "install_choco.ps1"},
+         {  "type": "powershell", "script": "downloadstiggpo.ps1"},
+         {  "type": "powershell", "script": "importstig.ps1"},
+         {  
+            "type": "powershell",
+            "inline": [
+              "choco install clamwin",
+              "choco install splunk-universalforwarder",
+              "choco install stigviewer"
+
+            ]
+          
+         }]
+}
