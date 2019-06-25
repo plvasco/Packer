@@ -1,3 +1,4 @@
+
 {
   "variables": {
     "aws_access_key": "AFILLIN",
@@ -22,6 +23,8 @@
          {  "type": "powershell", "script": "init.ps1"},
          {  "type": "powershell", "script": "install_choco.ps1"},
          {  "type": "powershell", "script": "downloadstiggpo.ps1"},
+         {  "type": "powershell", "script": "windowsupdate.ps1"}
+         
         
          {  
             "type": "powershell",
