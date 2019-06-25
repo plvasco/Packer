@@ -1,4 +1,4 @@
-
+,
 {
   "variables": {
     "aws_access_key": "AFILLIN",
@@ -23,7 +23,8 @@
          {  "type": "powershell", "script": "init.ps1"},
          {  "type": "powershell", "script": "install_choco.ps1"},
          {  "type": "powershell", "script": "downloadstiggpo.ps1"},
-         {  "type": "powershell", "script": "windowsupdate.ps1"}
+         {  "type": "powershell", "script": "windowsupdate.ps1"},
+         {  "type": "powershell", "script": "certimport.ps1"}
          
         
          {  
@@ -36,6 +37,9 @@
               "choco install Safenet version 5.1.88.0",
               "choco install WinCollect version 7.2.5",
               "choco install McAfee Agent version 4.8.0.2001"
+              "choco install aws cli version 4.8.0.2001"
+
+             
 
             ]
           
