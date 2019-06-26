@@ -13,7 +13,7 @@
       "winrm_use_ssl": true,
       "winrm_insecure": true,
       "encrypt_boot": true,
-      "kms_key_id": "b6fe5038-1cf9-4f7f-a9e6-60381b57f238"
+      "kms_key_id": "fillme"
 
          }],
 
