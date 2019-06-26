@@ -17,7 +17,12 @@
       "winrm_username": "Administrator",
       "winrm_use_ssl": true,
       "winrm_insecure": true
-           }],
+      "encrypt_boot": true,
+      "kms_key_id": xxx-xxxx-xxxx
+
+}
+ 
+],
      
  "provisioners": [
          {  "type": "powershell", "script": "init.ps1"},

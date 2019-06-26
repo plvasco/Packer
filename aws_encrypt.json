@@ -1,0 +1,23 @@
+{
+"builders": [{
+      "type": "amazon-ebs",
+      "access_key": "AKIATSAO44MRC5HHX2VV",
+      "secret_key": "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",
+      "region": "us-gov-west-1",
+      "instance_type": "t3.medium",
+      "source_ami": "ami-55295234",        
+      "ami_name": "WINDOWSysprepEN",
+      "user_data_file":"ec2-userdata.ps1",      
+      "communicator": "winrm",
+      "winrm_username": "Administrator",
+      "winrm_use_ssl": true,
+      "winrm_insecure": true,
+      "encrypt_boot": true,
+      "kms_key_id": "b6fe5038-1cf9-4f7f-a9e6-60381b57f238"
+
+         }],
+
+      "provisioners": [
+         {  "type": "powershell", "script": "init.ps1"},
+	 {  "type": "windows-shell", "inline" : ["c:\programfiles\amazon\ec2configservice\ec2config.exe -sysprep"]} 
+      ]}
