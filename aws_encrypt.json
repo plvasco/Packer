@@ -1,8 +1,8 @@
 {
 "builders": [{
       "type": "amazon-ebs",
-      "access_key": "AKIATSAO44MRC5HHX2VV",
-      "secret_key": "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",
+      "access_key": "fillme,
+      "secret_key": "fillme",
       "region": "us-gov-west-1",
       "instance_type": "t3.medium",
       "source_ami": "ami-55295234",        
