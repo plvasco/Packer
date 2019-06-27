@@ -1,0 +1,1 @@
+Import-Certificate -Filepath "C:\files\intermediate.cert"
