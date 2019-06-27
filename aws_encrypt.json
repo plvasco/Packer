@@ -1,33 +1,44 @@
-"builders": [{
-      "type": "amazon-ebs",
-      "access_key": "fillme,
-      "secret_key": "fillme",
-      "region": "us-gov-west-1",
-      "instance_type": "t3.medium",
-      "source_ami": "ami-55295234",        
-      "ami_name": "WINDOWSysprepEN",
-      "user_data_file":"ec2-userdata.ps1",      
-      "communicator": "winrm",
-      "winrm_username": "Administrator",
-      "winrm_use_ssl": true,
-      "winrm_insecure": true,
-      "encrypt_boot": true,
-      "kms_key_id": "fillme"
-
+{
+   "builders":[
+      {
+         "type":"amazon-ebs",
+         "access_key":"fillme",
+         "secret_key":"fillme",
+         "region":"us-gov-west-1",
+         "instance_type":"t3.medium",
+         "source_ami":"ami-55295234",
+         "ami_name":"WINDOWSysprepEN",
+         "user_data_file":"ec2-userdata.ps1",
+         "communicator":"winrm",
+         "winrm_username":"Administrator",
+         "winrm_use_ssl":true,
+         "winrm_insecure":true,
+         "encrypt_boot":true,
+         "kms_key_id":"fillme"
       }
-      ],
-
-      "provisioners": [
-         {  "type": "powershell", "script": "init.ps1"},
-         {  "type": "powershell", "script": "downloadunattend.ps1"},
-         {  "type": "powershell", "script": "install_choco.ps1"},
-         {  "type": "powershell", "script": "Import-Certificate.ps1"}
-         
-         {  
-            "type": "windows-shell",
-            "inline": [
-               "c:\programfiles\amazon\ec2configservice\ec2config.exe -sysprep"
-            ]
-         }]
-
-   
+   ],
+   "provisioners":[
+      {
+         "type":"powershell",
+         "script":"init.ps1"
+      },
+      {
+         "type":"powershell",
+         "script":"downloadunattend.ps1"
+      },
+      {
+         "type":"powershell",
+         "script":"install_choco.ps1"
+      },
+      {
+         "type":"powershell",
+         "script":"Import-Certificate.ps1"
+      },
+      {
+         "type":"windows-shell",
+         "inline":[
+            "c:\\programfiles\\amazon\\ec2configservice\\ec2config.exe -sysprep"
+         ]
+      }
+   ]
+}
