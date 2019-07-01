@@ -7,7 +7,7 @@
          "region":"us-gov-west-1",
          "instance_type":"t3.medium",
          "source_ami":"ami-55295234",
-         "ami_name":"WINDOWSysprepEN",
+         "ami_name":"WINDOWSysprepENchoco",
          "user_data_file":"ec2-userdata.ps1",
          "communicator":"winrm",
          "winrm_username":"Administrator",
@@ -37,9 +37,17 @@
       {
          "type": "powershell",
             "inline": [
-                "C:\\ProgramData\\Amazon\\EC2-Windows\\Launch\\Scripts\\InitializeInstance.ps1 -Schedule",
-                "C:\\ProgramData\\Amazon\\EC2-Windows\\Launch\\Scripts\\SysprepInstance.ps1 -NoShutdown"
-            
+               "C:\\ProgramData\\Amazon\\EC2-Windows\\Launch\\Scripts\\InitializeInstance.ps1 -Schedule",
+               "C:\\ProgramData\\Amazon\\EC2-Windows\\Launch\\Scripts\\SysprepInstance.ps1 -NoShutdown",
+               "choco feature enable -n allowGlobalConfirmation",
+               "choco install bigfixagent 9.5",
+               "choco install encaseafe 7.0.7",
+               "choco install safenet 10.2",
+               "choco install wincollect 7.2.5",
+               "choco install McAfeeAgent 5.5",
+	       "choco install splunk 1.0.0",
+               "choco install awscli"
+
          ]
       }
    ]
