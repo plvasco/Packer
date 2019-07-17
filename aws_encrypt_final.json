@@ -5,8 +5,8 @@
 	 "subnet_id":"subnet-7209ae04",
 	      
          "type":"amazon-ebs",
-         "access_key":"AKIAW6GYIYEDWWOXQ63Z",
-         "secret_key":"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",
+         "access_key":"blank",
+         "secret_key":"blank",
          "region":"us-gov-west-1",
          "instance_type":"t3.medium",
          "source_ami":"ami-55295234",
@@ -20,7 +20,7 @@
 	       "Status": "Info"
 	 },
          "encrypt_boot":true,
-         "kms_key_id":"77c26cf5-1104-46f0-81bb-c9b3be399195"
+         "kms_key_id":"blank"
       }
    ],
    "provisioners":[
