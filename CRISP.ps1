@@ -1,6 +1,4 @@
-﻿Expand-Archive -Path C:\s3-downloads\Chocopkg4Download.zip -DestinationPath C:\s3-downloads\Chocopkg4Download
-
-cd C:\s3-downloads\Chocopkg4Download\Chocopackages\bigfixagent
+﻿cd C:\s3-downloads\Chocopkg4Download\Chocopackages\bigfixagent
 choco install -y bigfixagent
 cd C:\s3-downloads\Chocopkg4Download\Chocopackages\mcafeeagent
 choco install -y mcafeeagent
